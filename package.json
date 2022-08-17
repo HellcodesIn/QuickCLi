@@ -4,12 +4,17 @@
   "description": "A Command line interface tool for devs",
   "main": "index.js",
   "bin": {
-      "createHTML": "./bin/HTML.sh",
-      "createJS": "./bin/javascript.sh"
+    "createHtml": "./bin/HTML.sh",
+    "createjs": "./bin/javascript.sh",
+    "createjava": "./bin/java.sh",
+    "createpy": "./bin/python.sh"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shubhesh",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "path": "^0.12.7"
+  }
 }

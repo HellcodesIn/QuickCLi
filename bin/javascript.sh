@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-require('./index.js').createjs
+const path = require('path');
+require(path.resolve('./index.js')).createjs;
+
