@@ -1,0 +1,15 @@
+{
+  "name": "quickcli",
+  "version": "1.0.0",
+  "description": "A Command line interface tool for devs",
+  "main": "index.js",
+  "bin": {
+      "createHTML": "./bin/HTML.sh",
+      "createJS": "./bin/javascript.sh"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shubhesh",
+  "license": "MIT"
+}
