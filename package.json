@@ -4,10 +4,11 @@
   "description": "A Command line interface tool for devs",
   "main": "index.js",
   "bin": {
-    "createHtml": "./bin/HTML.sh",
-    "createjs": "./bin/javascript.sh",
-    "createjava": "./bin/java.sh",
-    "createpy": "./bin/python.sh"
+    "html": "bin/HTML.sh",
+    "js": "bin/javascript.sh",
+    "java": "bin/java.sh",
+    "python": "bin/python.sh",
+    "cpp": "bin/cpp.sh"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +17,18 @@
   "license": "MIT",
   "devDependencies": {
     "path": "^0.12.7"
-  }
+  },
+  "dependencies": {
+    "inherits": "^2.0.3",
+    "process": "^0.11.10",
+    "util": "^0.10.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HellcodesIn/QuickCLi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HellcodesIn/QuickCLi/issues"
+  },
+  "homepage": "https://github.com/HellcodesIn/QuickCLi#readme"
 }
