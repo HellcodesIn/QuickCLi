@@ -1,4 +1,3 @@
-
 //external modules
 
 const fs = require('fs');
@@ -87,48 +86,54 @@ body {
 }
 
 `
-    
+
 
 
 
 //Hyper text markup language
 function createHTML() {
     fs.writeFileSync(`${process.cwd()}/${location}`, html);
+    console.log(`file created successfully at ${process.cwd()}/${location}`)
 }
 
-
 //javascript
-function createjs(){
+function createjs() {
     fs.writeFileSync(`${process.cwd()}/${location}`, js);
 }
 
 
 
 //java
-function createjava(){
+function createjava() {
     fs.writeFileSync(`${process.cwd()}/${location}`, java);
 }
 
 
 
 //python
-function createpy(){
+function createpy() {
     fs.writeFileSync(`${process.cwd()}/${location}`, python);
 }
 
 
 
 //C++
-function createcpp(){
+function createcpp() {
     fs.writeFileSync(`${process.cwd()}/${location}`, cpp);
 }
 
 
 
 //web bundle
-function webB(){
+function webB() {
     fs.mkdirSync(`${process.cwd()}/${location}`);
     fs.writeFileSync(`${process.cwd()}/${location}/index.html`, htmlBind);
     fs.writeFileSync(`${process.cwd()}/${location}/main.js`, js);
     fs.writeFileSync(`${process.cwd()}/${location}/style.css`, css);
 }
+
+
+
+
+
+//
