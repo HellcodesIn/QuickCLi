@@ -8,7 +8,8 @@
     "js": "bin/javascript.sh",
     "java": "bin/java.sh",
     "python": "bin/python.sh",
-    "cpp": "bin/cpp.sh"
+    "cpp": "bin/cpp.sh",
+    "website": "bin/website.sh"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

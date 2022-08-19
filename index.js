@@ -10,6 +10,7 @@ exports.createjs = createjs;
 exports.createjava = createjava;
 exports.createpy = createpy;
 exports.createcpp = createcpp;
+exports.webB = webB;
 
 //location
 const location = process.argv[2];
@@ -34,6 +35,29 @@ let html = `
 </html>
 
     `
+let htmlBind = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p>Believe in yourself</p>
+  <!-- Do what you want -->
+  <script src="main.js"></script>
+</body>
+</html>
+`
 let js = `
 console.log("Hello, fellow!");
 //Your Code:-
@@ -57,6 +81,12 @@ int main() {
     return 0;
 }
     `
+let css = `
+body {
+    /*Your choice*/
+}
+
+`
     
 
 
@@ -96,10 +126,9 @@ function createcpp(){
 
 
 //web bundle
-function webb(){
-    fs.mkdir(`${process.cwd()}/${location}`);
+function webB(){
+    fs.mkdirSync(`${process.cwd()}/${location}`);
+    fs.writeFileSync(`${process.cwd()}/${location}/index.html`, htmlBind);
+    fs.writeFileSync(`${process.cwd()}/${location}/main.js`, js);
+    fs.writeFileSync(`${process.cwd()}/${location}/style.css`, css);
 }
-
-
-
-webb();
