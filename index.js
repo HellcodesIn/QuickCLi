@@ -10,6 +10,8 @@ exports.createjava = createjava;
 exports.createpy = createpy;
 exports.createcpp = createcpp;
 exports.webB = webB;
+exports.deleter = deleter;
+exports.deleterFolder = deleterFolder;
 
 //location
 const location = process.argv[2];
@@ -86,40 +88,43 @@ body {
 }
 
 `
+//"created" prompt
+function created(){
+    console.log(`file created successfully at ${process.cwd()}/${location}`);
+}
 
 
 
 
 //Hyper text markup language
 function createHTML() {
-    fs.writeFileSync(`${process.cwd()}/${location}`, html);
-    console.log(`file created successfully at ${process.cwd()}/${location}`)
+    fs.writeFileSync(`${process.cwd()}/${location}`, html, created());
 }
 
 //javascript
 function createjs() {
-    fs.writeFileSync(`${process.cwd()}/${location}`, js);
+    fs.writeFileSync(`${process.cwd()}/${location}`, js, created());
 }
 
 
 
 //java
 function createjava() {
-    fs.writeFileSync(`${process.cwd()}/${location}`, java);
+    fs.writeFileSync(`${process.cwd()}/${location}`, java, created());
 }
 
 
 
 //python
 function createpy() {
-    fs.writeFileSync(`${process.cwd()}/${location}`, python);
+    fs.writeFileSync(`${process.cwd()}/${location}`, python, created());
 }
 
 
 
 //C++
 function createcpp() {
-    fs.writeFileSync(`${process.cwd()}/${location}`, cpp);
+    fs.writeFileSync(`${process.cwd()}/${location}`, cpp, created());
 }
 
 
@@ -136,4 +141,20 @@ function webB() {
 
 
 
-//
+//Delete files/Folders
+
+//files
+function deleter(){
+    fs.unlink(`${process.cwd()}/${location}`, ()=> {
+        console.log(`file deleted at ${process.cwd()}/${location}`);
+    })
+}
+
+//folders
+function deleterFolder(){
+    fs.rmdir(`${process.cwd()}/${location}`, ()=> {
+        console.log(`folder deleted at ${process.cwd()}/${location}`);
+    });
+}
+
+//deleterFolder()

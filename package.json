@@ -9,7 +9,9 @@
     "java": "bin/java.sh",
     "python": "bin/python.sh",
     "cpp": "bin/cpp.sh",
-    "website": "bin/website.sh"
+    "website": "bin/website.sh",
+    "delete": "bin/delete.sh",
+    "deleteDir": "bin/deleteFolder.sh"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
