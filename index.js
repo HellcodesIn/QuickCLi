@@ -90,7 +90,7 @@ body {
 `
 //"created" prompt
 function created(){
-    console.log(`file created successfully at ${process.cwd()}/${location}`);
+    console.log('\x1b[32m', `file created successfully at ${process.cwd()}/${location}`);
 }
 
 
@@ -131,10 +131,20 @@ function createcpp() {
 
 //web bundle
 function webB() {
-    fs.mkdirSync(`${process.cwd()}/${location}`);
-    fs.writeFileSync(`${process.cwd()}/${location}/index.html`, htmlBind);
-    fs.writeFileSync(`${process.cwd()}/${location}/main.js`, js);
-    fs.writeFileSync(`${process.cwd()}/${location}/style.css`, css);
+    fs.mkdir(`${process.cwd()}/${location}`, ()=> {
+        console.log('\x1b[32m', `folder successfully created at ${process.cwd()}/${location}`)
+    });
+    
+    fs.writeFile(`${process.cwd()}/${location}/index.html`, htmlBind, ()=>{
+        console.log('\x1b[32m', ` \n\nfile successfully created at ${process.cwd()}/${location}/index.html`)
+    });
+    fs.writeFile(`${process.cwd()}/${location}/main.js`, js, ()=> {
+        console.log('\x1b[32m', `\nfile successfully created at ${process.cwd()}/${location}/main.js`)
+    });
+    fs.writeFile(`${process.cwd()}/${location}/style.css`, css, () => {
+        console.log('\x1b[32m', `\nfile successfully created at ${process.cwd()}/${location}/style.css`)
+    });
+    
 }
 
 
@@ -145,16 +155,27 @@ function webB() {
 
 //files
 function deleter(){
-    fs.unlink(`${process.cwd()}/${location}`, ()=> {
-        console.log(`file deleted at ${process.cwd()}/${location}`);
-    })
+    if (fs.existsSync(`${process.cwd()}/${location}`)) {
+        fs.unlink(`${process.cwd()}/${location}`, () => {
+            console.log('\x1b[32m', `file deleted at ${process.cwd()}/${location}`);
+        })
+    }
+    else{
+        console.log("\x1b[41m", "\x1b[30m", `ERROR: File '${process.cwd()}/${location}' does not exist`);
+    }
+    
 }
 
 //folders
 function deleterFolder(){
-    fs.rmdir(`${process.cwd()}/${location}`, ()=> {
-        console.log(`folder deleted at ${process.cwd()}/${location}`);
-    });
+    if (fs.existsSync(`${process.cwd()}/${location}`)) {
+        fs.rmdir(`${process.cwd()}/${location}`, () => {
+            console.log('\x1b[32m', `folder deleted at ${process.cwd()}/${location}`);
+        });
+    }
+    else{
+        console.log("\x1b[41m", "\x1b[30m", `ERROR: Folder '${process.cwd()}/${location}' does not exist`);
+    }
 }
 
 //deleterFolder()
