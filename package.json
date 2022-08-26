@@ -11,7 +11,8 @@
     "cpp": "bin/cpp.sh",
     "website": "bin/website.sh",
     "delete": "bin/delete.sh",
-    "deleteDir": "bin/deleteFolder.sh"
+    "deleteDir": "bin/deleteFolder.sh",
+    "express": "bin/express.sh"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
